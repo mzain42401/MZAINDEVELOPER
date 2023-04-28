@@ -6,149 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>stop watch</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
-<style>
-    html {
-        height: 100%;
-    }
-
-    h1 {
-        text-align: center;
-        
-        margin-top: 100px;
-        color: #fff;
-        text-shadow:-2px 2px 1px red;
-            text-decoration:underline;
-    }
-
-
-    body {
-        background-color: black;
-        text-align: center;
-        color: black;
-
-    }
-
-    .mai {
-        display: flex;
-        justify-content: center;
-        font-size: 50px;
-        font-weight: bold;
-        font-family: sans-serif;
-        background-color: white;
-        width: 239px;
-        border-radius: 10px;
-        margin-top: 0px;
-        border: 02px solid black;
-        margin-top: 10px;
-
-    }
-
-    .cc {
-        margin-top: 01px;
-        font-size: 20px;
-        font-weight: bolder;
-        font-family: serif;
-        color: #fff;
-        background-color: black;
-        border: 02px solid white;
-        border-radius: 100px;
-    }
-
-    .h {
-        box-shadow: 0px 1px 4px rgb(0, 0, 0, 0.5);
-        padding: 15px;
-        border-radius: 05px;
-        background-color: red;
-        width: 240px;
-        margin: 0 auto;
-
-    }
-
-    #mili {
-        width: 70px;
-    }
-
-    #sec {
-        width: 55px;
-    }
-
-    #min {
-        width: 55px;
-    }
-
-    .but button {
-        background-color: black;
-        color: white;
-        border-radius: 10px;
-        margin-top: 10px;
-        width: 70px;
-        height: 25px;
-        font-size: 15px;
-        font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
-        font-weight: bold;
-        height: 40px;
-        margin-top: 20px;
-        font-size: 22px;
-        border: 02px solid rgb(208, 255, 0);
-    }
-
-    .but button:active {
-        border: 02px solid aqua;
-        background-color: white;
-        color: black;
-    }
-
-
-
-    @media screen and (max-width:480px) {
-
-        body {
-            margin: 0px;
-            height: 100vh;
-            width: 100%;
-        }
-
-        h1 {
-            
-            
-            color: #fff;
-            text-shadow:-2px 2px 1px red;
-            text-decoration:underline;
-
-        }
-
-        .h {
-            height: 155px;
-        }
-
-        .but button {
-            height: 40px;
-            margin-top: 20px;
-            font-size: 22px;
-            border: 02px solid rgb(208, 255, 0);
-        }
-
-        .mai {
-            margin-top: 10px;
-        }
-
-    }
-</style>
-
-
 <body>
 
-
-    <h1 class="c">MZ DEVELOPER </h1>
-
-
-
-
-
-    <div class="h">
-        <div class="cc"> STOP WATCH</div>
-        <div class="mai">
+    <div class="container">
+        <div class="stopWatch"> STOP WATCH</div>
+        <div class="fegures">
 
             <div id="min">
                 00
@@ -178,59 +42,7 @@
 
 
 
-    <script>
-        var min = '00';
-        var sec = '00';
-        var msec = '00';
-        var minn = document.getElementById('min')
-        var secc = document.getElementById('sec')
-        var milii = document.getElementById('mili')
-        var interval;
-
-        function timer() {
-            msec++
-            milii.innerHTML = msec;
-            if (msec >= 100) {
-                sec++
-                secc.innerHTML = sec;
-                msec = 00
-            }
-            else if (sec >= 60) {
-                min++
-                minn.innerHTML = min;
-                sec = 00;
-
-            }
-
-        }
-        var k = false
-        function start() {
-            interval = setInterval(timer, 10)
-            k = true
-            if (k = true) {
-                document.getElementById("dd").disabled = true
-            }
-        }
-
-        function stop() {
-            clearInterval(interval)
-            k = false
-            document.getElementById("dd").disabled = false
-            // document.write(`<h1>wellcome To</h1><h1><b>MZ DEVELOPER</b></h1><h1>Stop Watch Record</h1>  your time is   ${min}    minutes ,   ${sec}   second ,  ${msec}   millisecond .`)
-
-        }
-        function reset() {
-            min = '00 ';
-            sec = '00 ';
-            msec = '00';
-            minn.innerHTML = min;
-            secc.innerHTML = sec;
-            milii.innerHTML = msec;
-            clearInterval(interval)
-            k = false
-            document.getElementById("dd").disabled = false
-        }
-    </script>
+   <script src="./app.js"></script>
 </body>
 
 </html>
